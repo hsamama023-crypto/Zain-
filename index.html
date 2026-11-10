@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Question For You 💜</title>
+<title>For Zainab 💜 - By Zain</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Great+Vibes&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 0%, #2a0a4a 0%, #12002b 35%, #000 85%);padding:14px;overflow-x:hidden}
 #starsCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
@@ -36,6 +36,8 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .reasons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;text-align:left}
 .reason{background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);border-radius:14px;padding:10px;font-size:11px;color:#fff;line-height:1.4}
 .reason b{display:block;font-size:14px;margin-bottom:2px}
+.shayari{margin-top:14px;background:linear-gradient(135deg, rgba(250,204,21,.12), rgba(168,85,247,.15));border:1px dashed #facc15;border-radius:16px;padding:12px;color:#fff;font-size:12px;line-height:1.7;font-style:italic}
+.shayari b{color:#facc15;font-style:normal}
 .gallery{display:flex;gap:8px;justify-content:center;margin-top:14px}
 .gallery img{width:70px;height:70px;object-fit:cover;border-radius:14px;border:2px solid #a855f7;cursor:pointer;transition:.3s}
 .gallery img:hover{transform:scale(1.1);border-color:#facc15}
@@ -44,7 +46,6 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .final-video,.final-img{width:100%;max-height:32vh;object-fit:contain;border-radius:20px;border:2px solid #facc15;margin:10px auto;display:block;background:#000}
 .final{font-size:20px;font-weight:800;color:#fff;margin-top:10px}.final span{color:#facc15}
 .final2{font-family:'Great Vibes',cursive;font-size:36px;color:#d8b4fe;margin-top:4px}
-.counter{margin-top:8px;font-size:10px;color:#facc15;background:rgba(250,204,21,.12);padding:6px 12px;border-radius:100px;display:inline-block}
 .ring{font-size:60px;animation:spin 3s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 .dev{margin-top:14px;font-size:8px;letter-spacing:3px;color:rgba(255,255,255,.35)}.dev b{color:#facc15}
@@ -57,14 +58,18 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .big-text{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:61;font-size:48px;font-weight:800;color:#fff;text-shadow:0 0 25px #a855f7,0 0 60px #facc15;display:none;text-align:center;line-height:1.1}
 .big-text.show{display:block;animation:zoomIn 1s}
 @keyframes zoomIn{0%{transform:translate(-50%,-50%) scale(0)}100%{transform:translate(-50%,-50%) scale(1)}}
+.timeline{margin-top:14px;text-align:left}
+.timeline-item{display:flex;gap:10px;margin-top:10px;background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);border-radius:14px;padding:10px}
+.timeline-item span{font-size:20px}
+.timeline-item b{color:#facc15;font-size:11px;display:block}
+.timeline-item p{color:#d8b4fe;font-size:11px}
 </style>
 </head>
 <body>
 <canvas id="starsCanvas"></canvas>
 <canvas id="fwCanvas"></canvas>
-<div id="bigText" class="big-text">SHE SAID<br>YES! 💜✨</div>
-<audio id="bgSong" loop src="song.mp3"></audio>
-
+<div id="bigText" class="big-text">ZAINAB SAID<br>YES! 💜✨</div>
+<audio id="bgSong" loop src="song9.mp3"></audio>
 <div class="card" id="card">
 <div class="top-row">
 <div class="badge" id="topBadge">QUESTION 1 OF 4</div>
@@ -74,33 +79,39 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 </div>
 </div>
 <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-<img src="pic1.jpg" class="main-pic" onerror="this.style.display='none'" id="mainPic">
+<img src="pic5.jpg" class="main-pic" onerror="this.style.display='none'" id="mainPic">
 <div class="logo" id="mainLogo">💜✨</div>
-<h1 id="mainTitle">Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span></h1>
-<p class="sub" id="mainSub">Sach batana, jhoot nahi chalega <b>meri jaan!</b></p>
+<h1 id="mainTitle">Zainab, Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span></h1>
+<p class="sub" id="mainSub">Sach batana Zainab, jhoot nahi chalega <b>meri jaan!</b></p>
 <div class="btns" id="area">
 <button class="btn yes" id="yes">YES! 😍</button>
 <button class="btn no" id="no">No 🙈</button>
 </div>
 <div class="meter-wrap"><div class="meter-bg"><div class="meter-fill" id="meterFill"></div></div><div class="meter-txt" id="meterTxt">Love Meter: 50% 💜</div></div>
-<div class="reasons" id="reasonsBox">
-<div class="reason"><b>😍 Smile</b>Tumhari smile pe dil aa gaya</div>
+<div class="shayari">“Teri muskaan pe fida hai ye dil,<br>Zainab tu mili to laga, mil gayi manzil.”<br><b>- Zain 💜</b></div>
+<div class="reasons">
+<div class="reason"><b>😍 Smile</b>Zainab ki smile pe dil aa gaya</div>
 <div class="reason"><b>🌙 Baatein</b>Raat bhar baatein karne ka mann</div>
-<div class="reason"><b>👑 Queen</b>Tum meri queen ho</div>
-<div class="reason"><b>💫 Dream</b>Har dua me tum ho</div>
+<div class="reason"><b>👑 Queen</b>Zainab meri queen hai</div>
+<div class="reason"><b>💫 Dua</b>Har dua me Zainab hai</div>
+</div>
+<div class="timeline">
+<div class="timeline-item"><span>👀</span><div><b>PEHLI MULAQAT</b><p>Jab pehli baar dekha, dil ruk gaya tha</p></div></div>
+<div class="timeline-item"><span>💬</span><div><b>PEHLI BAAT</b><p>Us din se har din khubsurat lagne laga</p></div></div>
+<div class="timeline-item"><span>💜</span><div><b>AAJ KA DIN</b><p>Aaj Zain, Zainab se sab kuch kehna chahta hai</p></div></div>
 </div>
 <div class="gallery">
-<img src="pic1.jpg" onclick="openBig(this.src)">
-<img src="pic2.jpg" onclick="openBig(this.src)">
-<img src="pic3.jpg" onclick="openBig(this.src)">
+<img src="pic5.jpg" onclick="openBig(this.src)">
+<img src="pic6.jpg" onclick="openBig(this.src)">
+<img src="pic7.jpg" onclick="openBig(this.src)">
 </div>
-<div class="dev">MADE WITH 💜 BY <b>YOUR LOVE</b></div>
+<div class="dev">MADE WITH 💜 BY <b>ZAIN FOR ZAINAB</b></div>
 </div>
-
-<div id="aboutModal" class="modal" onclick="closeAbout()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeAbout()">✕</div><h3 style="color:#facc15">ABOUT THIS SURPRISE 💜</h3><p style="color:#fff;font-size:13px;line-height:1.8;margin-top:10px">Ye page sirf tumhare liye banaya hai.<br><br>Tum meri duniya ho, meri khushi ho, mera sab kuch ho.<br><br><b style="color:#d8b4fe">Hamesha Tumhara,<br>Your Love 💜</b></p></div></div>
-<div id="letterModal" class="modal" onclick="closeLetter()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeLetter()">✕</div><div style="font-size:48px;text-align:center">💌</div><h3 style="color:#facc15;text-align:center">MY LOVE LETTER</h3><p id="typeText" style="color:#fff;font-size:13px;line-height:1.9;margin-top:10px;min-height:180px"></p></div></div>
+<div id="aboutModal" class="modal" onclick="closeAbout()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeAbout()">✕</div><h3 style="color:#facc15">ABOUT THIS SURPRISE 💜</h3><p style="color:#fff;font-size:13px;line-height:1.8;margin-top:10px">Ye page sirf tumhare liye banaya hai Zainab.<br><br>Tum meri duniya ho, meri khushi ho, mera sab kuch ho.<br><br><b style="color:#d8b4fe">Hamesha Tumhara,<br>Zain 💜</b></p></div></div>
+<div id="letterModal" class="modal" onclick="closeLetter()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeLetter()">✕</div><div style="font-size:48px;text-align:center">💌</div><h3 style="color:#facc15;text-align:center">ZAIN KA LOVE LETTER</h3><p id="typeText" style="color:#fff;font-size:13px;line-height:1.9;margin-top:10px;min-height:180px"></p></div></div>
+<div id="promiseModal" class="modal" onclick="closePromise()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closePromise()">✕</div><div style="font-size:48px;text-align:center">💍</div><h3 style="color:#facc15;text-align:center">ZAIN KA WADA</h3><p style="color:#fff;font-size:13px;line-height:1.9;margin-top:10px">1. Main Zainab ko hamesha khush rakhunga.<br>2. Kabhi uska saath nahi chhodunga.<br>3. Har dukh me uske saath khada rahunga.<br>4. Uske chehre pe hamesha smile rakhunga.<br><br><b style="color:#facc15">Wada hai Zain ka, Zainab se 💜</b></p></div></div>
 <div id="bigModal" class="modal" onclick="closeBig()"><div class="modal-box" onclick="event.stopPropagation()" style="padding:10px;text-align:center"><div class="close" onclick="closeBig()">✕</div><img id="bigImg" style="width:100%;border-radius:16px"></div></div>
-  <script>
+<script>
 const c=document.getElementById('starsCanvas');const ctx=c.getContext('2d');
 function rs(){c.width=innerWidth;c.height=innerHeight}rs();addEventListener('resize',rs);
 let stars=[];for(let i=0;i<90;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5,b:Math.random()*10});
@@ -110,13 +121,14 @@ function resizeFW(){fw.width=innerWidth;fw.height=innerHeight}resizeFW();
 function makeFW(x,y){for(let i=0;i<30;i++)parts.push({x,y,vx:(Math.random()-.5)*8,vy:(Math.random()-.5)*8,life:1,color:`hsl(${260+Math.random()*60},100%,65%)`});}
 function animFW(){fctx.fillStyle='rgba(0,0,0,.2)';fctx.fillRect(0,0,fw.width,fw.height);parts.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.life-=.02;fctx.globalAlpha=p.life;fctx.fillStyle=p.color;fctx.beginPath();fctx.arc(p.x,p.y,3,0,Math.PI*2);fctx.fill();if(p.life<=0)parts.splice(i,1);});if(fw.style.display!=='none')requestAnimationFrame(animFW);}
 function startFW(){fw.style.display='block';fctx.clearRect(0,0,fw.width,fw.height);animFW();let n=0;let iv=setInterval(()=>{makeFW(Math.random()*innerWidth,Math.random()*innerHeight*.5);n++;if(n>8)clearInterval(iv);},200);setTimeout(()=>{fw.style.display='none';parts=[];},2500);}
-let songPlaying=false;function toggleSong(){let a=document.getElementById('bgSong');let b=document.getElementById('musicBtn');if(!songPlaying){a.play().catch(()=>alert('song.mp3 nahi mili!'));b.textContent='🔇';songPlaying=true;}else{a.pause();b.textContent='🎵';songPlaying=false;}}
+let songPlaying=false;function toggleSong(){let a=document.getElementById('bgSong');let b=document.getElementById('musicBtn');if(!songPlaying){a.play().catch(()=>alert('song9.mp3 nahi mili!'));b.textContent='🔇';songPlaying=true;}else{a.pause();b.textContent='🎵';songPlaying=false;}}
 function openAbout(){document.getElementById('aboutModal').classList.add('show')}function closeAbout(){document.getElementById('aboutModal').classList.remove('show')}
+function openPromise(){document.getElementById('promiseModal').classList.add('show')}function closePromise(){document.getElementById('promiseModal').classList.remove('show')}
 function openBig(src){document.getElementById('bigImg').src=src;document.getElementById('bigModal').classList.add('show')}function closeBig(){document.getElementById('bigModal').classList.remove('show')}
-const letterTxt=`Meri Jaan,<br><br>Tum jab se meri zindagi me aayi ho, har din Eid jaisa lagta hai.<br><br>Tumhari hasi, tumhari baatein, tumhara gussa - sab kuch mujhe pasand hai.<br><br>Kya tum hamesha ke liye meri banogi?<br><br><b style="color:#facc15">Hamesha Tumhara,<br>Your Love 💜</b>`;
+const letterTxt=`Meri Pyaari Zainab,<br><br>Tum jab se meri zindagi me aayi ho, har din Eid jaisa lagta hai.<br><br>Tumhari hasi, tumhari baatein, tumhara gussa - sab kuch mujhe pasand hai.<br><br>Zainab, kya tum hamesha ke liye meri banogi?<br><br><b style="color:#facc15">Hamesha Tumhara,<br>Zain 💜</b>`;
 let ti;function openLetter(){document.getElementById('letterModal').classList.add('show');let el=document.getElementById('typeText');el.innerHTML='';let i=0;clearInterval(ti);ti=setInterval(()=>{if(i>=letterTxt.length){clearInterval(ti);return;}let ch=letterTxt[i];if(ch==='<'){let tag='';while(i<letterTxt.length && letterTxt[i]!=='>'){tag+=letterTxt[i];i++;}tag+='>';el.innerHTML+=tag;i++;}else{el.innerHTML+=ch;i++;}},22);}function closeLetter(){document.getElementById('letterModal').classList.remove('show');clearInterval(ti);}
 const noBtn=document.getElementById('no');const yesBtn=document.getElementById('yes');
-const texts=["No 🙈","Pakka? 🤭","Socho! 😏","Catch me! 🏃‍♀️","Nope 😜","Hehe 😂","Impossible! 😝","Try Again! 💜"];
+const texts=["No 🙈","Pakka Zainab? 🤭","Socho! 😏","Catch me! 🏃‍♀️","Nope 😜","Hehe 😂","Impossible! 😝","Try Again! 💜"];
 let roaming=false,noCount=0,love=50;
 function moveNo(){
   if(!roaming){roaming=true;noBtn.classList.add('roaming');}
@@ -136,41 +148,39 @@ noBtn.addEventListener('click',e=>{e.preventDefault();moveNo();});
 document.addEventListener('mousemove',e=>{if(!roaming)return;let r=noBtn.getBoundingClientRect();let d=Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2));if(d<110)moveNo();});
 setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['💜','💛','✨','💋','🌟'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*18)+'px';h.style.animationDuration=(2.5+Math.random()*2)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),4500);},500);
 const qs=[
- {logo:"💜✨",title:"Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span>",sub:`Sach batana, jhoot nahi chalega <b>meri jaan!</b>`,badge:"QUESTION 1 OF 4",bar:"25%"},
- {logo:"😜💜",title:"Kya Tum Mujhe <span>Roz Tang Karogi? 😜</span>",sub:`Lifetime contract hai, soch lo <b>meri jaan!</b>`,badge:"QUESTION 2 OF 4",bar:"50%"},
- {logo:"🥹💛",title:"Kya Tum Mere Saath <span>Budhe Hogi? 👵👴</span>",sub:`Haath pakad ke, hamesha <b>meri jaan!</b>`,badge:"QUESTION 3 OF 4",bar:"75%"},
- {logo:"💍💜",title:"Will You Be Mine <span>Forever? 💍</span>",sub:`Meri Queen, mera sab kuch <b>meri jaan!</b>`,badge:"FINAL QUESTION 💍",bar:"100%"}
+ {logo:"💜✨",title:"Zainab, Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span>",sub:`Sach batana Zainab, jhoot nahi chalega <b>meri jaan!</b>`,badge:"QUESTION 1 OF 4",bar:"25%"},
+ {logo:"😜💜",title:"Zainab, Kya Tum Mujhe <span>Roz Tang Karogi? 😜</span>",sub:`Lifetime contract hai Zainab, soch lo <b>meri jaan!</b>`,badge:"QUESTION 2 OF 4",bar:"50%"},
+ {logo:"🥹💛",title:"Zainab, Kya Tum Mere Saath <span>Budhi Hogi? 👵👴</span>",sub:`Haath pakad ke, hamesha <b>meri jaan!</b>`,badge:"QUESTION 3 OF 4",bar:"75%"},
+ {logo:"💍💜",title:"Zainab, Will You Be Mine <span>Forever? 💍</span>",sub:`Meri Queen Zainab, mera sab kuch <b>meri jaan!</b>`,badge:"FINAL QUESTION 💍",bar:"100%"}
 ];
 let cur=0;const mainTitle=document.getElementById('mainTitle');const mainSub=document.getElementById('mainSub');const mainLogo=document.getElementById('mainLogo');
 function showQ(i){mainLogo.textContent=qs[i].logo;mainTitle.innerHTML=qs[i].title;mainSub.innerHTML=qs[i].sub;document.getElementById('topBadge').textContent=qs[i].badge;document.getElementById('progressBar').style.width=qs[i].bar;noCount=0;love=50;document.getElementById('meterFill').style.width='50%';document.getElementById('meterTxt').textContent='Love Meter: 50% 💜';yesBtn.style.transform='translate(-50%,-50%) scale(1)';yesBtn.textContent='YES! 😍';noBtn.style.transform='translate(-50%,-50%) scale(1)';}
 let showingVideo=true;
 function toggleMedia(){
   let con=document.getElementById('mediaBox');let cap=document.getElementById('cap');
-  if(showingVideo){con.innerHTML=`<img class="final-img" src="pic2.jpg">`;if(cap)cap.textContent='Meri Pyaari Jaan 😍';document.getElementById('nextBtn').textContent='🎥 Video';showingVideo=false;}
-  else{con.innerHTML=`<video class="final-video" src="video.mp4" autoplay loop playsinline controls></video>`;if(cap)cap.textContent='Our beautiful moment 💜';document.getElementById('nextBtn').textContent='🖼️ Photo';showingVideo=true;}
+  if(showingVideo){con.innerHTML=`<img class="final-img" src="pic6.jpg">`;if(cap)cap.textContent='Meri Pyaari Zainab 😍';document.getElementById('nextBtn').textContent='🎥 Video';showingVideo=false;}
+  else{con.innerHTML=`<video class="final-video" src="video8.mp4" autoplay loop playsinline controls></video>`;if(cap)cap.textContent='Our beautiful moment 💜';document.getElementById('nextBtn').textContent='🖼️ Photo';showingVideo=true;}
 }
 yesBtn.onclick=()=>{
   if(cur<3){cur++;showQ(cur);roaming=false;noBtn.classList.remove('roaming');noBtn.style.left='';noBtn.style.top='';noBtn.style.left='68%';noBtn.style.top='50%';}
   else{
     startFW();document.getElementById('bigText').classList.add('show');setTimeout(()=>document.getElementById('bigText').classList.remove('show'),3000);
     document.getElementById('card').innerHTML=`
-      <div class="top-row"><div class="badge">YES! SHE SAID YES! 💜</div><div class="icon-btn" onclick="toggleSong()">🎵</div></div>
+      <div class="top-row"><div class="badge">YES! ZAINAB SAID YES! 💜</div><div class="icon-btn" onclick="toggleSong()">🎵</div></div>
       <div style="margin-top:12px"><span class="ring">💍</span></div>
-      <div id="mediaBox"><video class="final-video" src="video.mp4" autoplay loop playsinline controls></video></div>
+      <div id="mediaBox"><video class="final-video" src="video8.mp4" autoplay loop playsinline controls></video></div>
       <div style="font-size:11px;color:#d8b4fe;margin-top:4px;font-style:italic" id="cap">Our beautiful moment 💜</div>
-      <div class="final">Yayy! I Knew You'd Say <span>YES</span> Meri Jaan! 🥹💜</div>
-      <div class="final2">I Love You Forever & Always</div>
-      <div class="counter" id="dayCounter"></div>
-      <div style="display:flex;gap:6px;justify-content:center;margin-top:10px">
+      <div class="final">Yayy! I Knew You'd Say <span>YES</span> Zainab! 🥹💜</div>
+      <div class="final2">Zain Loves Zainab Forever & Always</div>
+      <div class="shayari" style="margin-top:10px">“Zainab tu mili to dua kabool ho gayi,<br>Meri har khushi ab tumse shuru ho gayi.”<br><b>- Zain</b></div>
+      <div style="display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap">
         <button class="small-btn" id="nextBtn" onclick="toggleMedia()">🖼️ Photo</button>
         <button class="small-btn gold" onclick="openLetter()">💌 Letter</button>
+        <button class="small-btn" onclick="openPromise()">💍 Wada</button>
         <button class="small-btn" onclick="startFW()">🎆 Again</button>
       </div>
-      <div class="dev">MADE WITH 💜 BY <b>YOUR LOVE</b></div>
+      <div class="dev">MADE WITH 💜 BY <b>ZAIN FOR ZAINAB</b></div>
     `;
-    let start=new Date('2025-12-23');
-    function upd(){let d=Math.floor((new Date()-start)/(1000*60*60*24));let el=document.getElementById('dayCounter');if(el)el.textContent=`Together ${d} days & forever 💜`;}
-    setInterval(upd,1000);upd();
   }
 };
 </script>
