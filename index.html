@@ -40,6 +40,7 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .shayari b{color:#facc15;font-style:normal}
 .small-btn{padding:9px 14px;border-radius:100px;border:1px solid #a855f7;background:rgba(0,0,0,.5);color:#fff;font-size:11px;font-weight:600;cursor:pointer}
 .small-btn.gold{background:linear-gradient(135deg,#facc15,#a855f7);border:0;color:#000}
+.small-btn.green{background:#25D366;border:0;color:#fff;font-weight:800}
 .final-video,.final-img{width:100%;max-height:32vh;object-fit:contain;border-radius:20px;border:2px solid #facc15;margin:10px auto;display:block;background:#000}
 .final{font-size:20px;font-weight:800;color:#fff;margin-top:10px}.final span{color:#facc15}
 .final2{font-family:'Great Vibes',cursive;font-size:36px;color:#d8b4fe;margin-top:4px}
@@ -60,6 +61,13 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .timeline-item span{font-size:20px}
 .timeline-item b{color:#facc15;font-size:11px;display:block}
 .timeline-item p{color:#d8b4fe;font-size:11px}
+#lockScreen{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 0%, #2a0a4a 0%, #12002b 40%, #000 90%);display:flex;align-items:center;justify-content:center;padding:20px}
+.lock-box{width:100%;max-width:340px;background:rgba(0,0,0,.6);border:1.5px solid #a855f7;border-radius:28px;padding:28px 20px;text-align:center;box-shadow:0 0 40px rgba(168,85,247,.5)}
+.lock-input{width:100%;padding:13px;border-radius:100px;border:1.5px solid #a855f7;background:#000;color:#fff;text-align:center;font-size:16px;font-weight:700;letter-spacing:3px;outline:none;text-transform:lowercase;margin-top:14px}
+.lock-input:focus{border-color:#facc15;box-shadow:0 0 15px rgba(250,204,21,.4)}
+.lock-btn{width:100%;margin-top:12px;padding:13px;border:0;border-radius:100px;background:linear-gradient(135deg,#7c3aed,#facc15);color:#000;font-weight:800;font-size:15px;cursor:pointer}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.shake{animation:shake .4s}
 </style>
 </head>
 <body>
@@ -67,11 +75,26 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 <canvas id="fwCanvas"></canvas>
 <div id="bigText" class="big-text">ZAINAB SAID<br>YES! 💜✨</div>
 <audio id="bgSong" loop src="song9.mp3"></audio>
-<div class="card" id="card">
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen">
+<div class="lock-box">
+<div style="font-size:64px;animation:beat 1.2s infinite">🔒💜</div>
+<h1 style="font-size:22px">For My Zainab Only</h1>
+<p style="color:#d8b4fe;font-size:12px;margin-top:6px;line-height:1.6">Ye surprise sirf tumhare liye hai Zainab.<br>Password dalo aur andar aao 🥺</p>
+<p style="color:#facc15;font-size:11px;margin-top:10px;font-weight:600">Hint: Zain Zainab se kya karta hai? ❤️</p>
+<input type="password" id="passInput" class="lock-input" placeholder="PASSWORD LIKHO" onkeydown="if(event.key==='Enter')checkPass()">
+<button class="lock-btn" onclick="checkPass()">UNLOCK 💜</button>
+<p id="passError" style="color:#ff6b6b;font-size:12px;margin-top:10px;display:none">Galat password Zainab! Dobara try karo 🥺</p>
+<p style="color:rgba(255,255,255,.3);font-size:9px;letter-spacing:2px;margin-top:14px">MADE WITH 💜 BY <b style="color:#facc15">SAMAMA</b></p>
+</div>
+</div>
+
+<div class="card" id="card" style="display:none">
 <div class="top-row">
 <div class="badge" id="topBadge">QUESTION 1 OF 4</div>
 <div style="display:flex;gap:6px">
-<div class="icon-btn" onclick="toggleSong()" id="musicBtn">🎵</div>
+<div class="icon-btn" onclick="toggleSong()" id="musicBtn">🔇</div>
 <div class="icon-btn" onclick="openAbout()">💜</div>
 </div>
 </div>
@@ -111,7 +134,26 @@ function resizeFW(){fw.width=innerWidth;fw.height=innerHeight}resizeFW();
 function makeFW(x,y){for(let i=0;i<30;i++)parts.push({x,y,vx:(Math.random()-.5)*8,vy:(Math.random()-.5)*8,life:1,color:`hsl(${260+Math.random()*60},100%,65%)`});}
 function animFW(){fctx.fillStyle='rgba(0,0,0,.2)';fctx.fillRect(0,0,fw.width,fw.height);parts.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.life-=.02;fctx.globalAlpha=p.life;fctx.fillStyle=p.color;fctx.beginPath();fctx.arc(p.x,p.y,3,0,Math.PI*2);fctx.fill();if(p.life<=0)parts.splice(i,1);});if(fw.style.display!=='none')requestAnimationFrame(animFW);}
 function startFW(){fw.style.display='block';fctx.clearRect(0,0,fw.width,fw.height);animFW();let n=0;let iv=setInterval(()=>{makeFW(Math.random()*innerWidth,Math.random()*innerHeight*.5);n++;if(n>8)clearInterval(iv);},200);setTimeout(()=>{fw.style.display='none';parts=[];},2500);}
-let songPlaying=false;function toggleSong(){let a=document.getElementById('bgSong');let b=document.getElementById('musicBtn');if(!songPlaying){a.play().catch(()=>alert('song9.mp3 nahi mili!'));b.textContent='🔇';songPlaying=true;}else{a.pause();b.textContent='🎵';songPlaying=false;}}
+let songPlaying=false;
+function tryPlaySong(){let a=document.getElementById('bgSong');a.play().then(()=>{songPlaying=true;let b=document.getElementById('musicBtn');if(b)b.textContent='🔇';}).catch(()=>{});}
+function toggleSong(){let a=document.getElementById('bgSong');let b=document.getElementById('musicBtn');if(!songPlaying){a.play();b.textContent='🔇';songPlaying=true;}else{a.pause();b.textContent='🎵';songPlaying=false;}}
+function checkPass(){
+  let v=document.getElementById('passInput').value.trim().toLowerCase();
+  if(v==='love'){
+    document.getElementById('lockScreen').style.display='none';
+    document.getElementById('card').style.display='block';
+    tryPlaySong();
+    startFW();
+  }else{
+    let box=document.querySelector('.lock-box');box.classList.remove('shake');void box.offsetWidth;box.classList.add('shake');
+    document.getElementById('passError').style.display='block';
+    document.getElementById('passInput').value='';
+  }
+}
+function sendWhatsApp(){
+  let msg=encodeURIComponent("Zain 💜 Maine YES bol diya! 🥹✨ Main hamesha ke liye tumhari hun! I Love You So Much! - Zainab 💜");
+  window.open("https://wa.me/?text="+msg,"_blank");
+}
 function openAbout(){document.getElementById('aboutModal').classList.add('show')}function closeAbout(){document.getElementById('aboutModal').classList.remove('show')}
 function openPromise(){document.getElementById('promiseModal').classList.add('show')}function closePromise(){document.getElementById('promiseModal').classList.remove('show')}
 function openBig(src){document.getElementById('bigImg').src=src;document.getElementById('bigModal').classList.add('show')}function closeBig(){document.getElementById('bigModal').classList.remove('show')}
@@ -166,7 +208,7 @@ yesBtn.onclick=()=>{
   else{
     startFW();document.getElementById('bigText').classList.add('show');setTimeout(()=>document.getElementById('bigText').classList.remove('show'),3000);
     document.getElementById('card').innerHTML=`
-      <div class="top-row"><div class="badge">YES! ZAINAB SAID YES! 💜</div><div class="icon-btn" onclick="toggleSong()">🎵</div></div>
+      <div class="top-row"><div class="badge">YES! ZAINAB SAID YES! 💜</div><div class="icon-btn" onclick="toggleSong()">🔇</div></div>
       <div style="margin-top:12px"><span class="ring">💍</span></div>
       <div id="mediaBox"><video class="final-video" src="video8.mp4" autoplay loop playsinline controls></video></div>
       <div style="font-size:11px;color:#d8b4fe;margin-top:4px;font-style:italic" id="cap">Our beautiful moment 💜</div>
@@ -179,6 +221,7 @@ yesBtn.onclick=()=>{
         <button class="small-btn" onclick="openPromise()">💍 Wada</button>
         <button class="small-btn" onclick="startFW()">🎆 Again</button>
       </div>
+      <button class="small-btn green" onclick="sendWhatsApp()" style="width:100%;margin-top:10px;padding:13px;font-size:14px">💚 Zain ko WhatsApp pe YES bhejo</button>
       <div class="dev">MADE WITH 💜 BY <b>SAMAMA</b> FOR ZAIN & ZAINAB</div>
     `;
   }
