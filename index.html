@@ -17,8 +17,8 @@ body{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-
 .icon-btn{width:36px;height:36px;background:#000;border:1.5px solid #a855f7;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#facc15;font-size:16px;cursor:pointer}
 .progress{height:5px;background:rgba(255,255,255,.08);border-radius:10px;margin:16px 0;overflow:hidden}
 .progress-bar{height:100%;background:linear-gradient(90deg,#a855f7,#facc15);width:25%;transition:.5s}
-.main-pic{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #facc15;box-shadow:0 0 25px rgba(250,204,21,.6);margin:6px auto;display:block}
-.logo{font-size:52px;animation:beat 1.2s infinite;margin-top:10px}
+.cute-badge{background:rgba(250,204,21,.15);border:1px solid #facc15;border-radius:100px;padding:6px 12px;font-size:11px;color:#facc15;display:inline-block;margin-top:10px;font-weight:600}
+.logo{font-size:64px;animation:beat 1.2s infinite;margin-top:10px}
 @keyframes beat{50%{transform:scale(1.15)}}
 h1{font-size:25px;color:#fff;font-weight:800;margin:10px 0 6px;line-height:1.15}
 h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -38,9 +38,6 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .reason b{display:block;font-size:14px;margin-bottom:2px}
 .shayari{margin-top:14px;background:linear-gradient(135deg, rgba(250,204,21,.12), rgba(168,85,247,.15));border:1px dashed #facc15;border-radius:16px;padding:12px;color:#fff;font-size:12px;line-height:1.7;font-style:italic}
 .shayari b{color:#facc15;font-style:normal}
-.gallery{display:flex;gap:8px;justify-content:center;margin-top:14px}
-.gallery img{width:70px;height:70px;object-fit:cover;border-radius:14px;border:2px solid #a855f7;cursor:pointer;transition:.3s}
-.gallery img:hover{transform:scale(1.1);border-color:#facc15}
 .small-btn{padding:9px 14px;border-radius:100px;border:1px solid #a855f7;background:rgba(0,0,0,.5);color:#fff;font-size:11px;font-weight:600;cursor:pointer}
 .small-btn.gold{background:linear-gradient(135deg,#facc15,#a855f7);border:0;color:#000}
 .final-video,.final-img{width:100%;max-height:32vh;object-fit:contain;border-radius:20px;border:2px solid #facc15;margin:10px auto;display:block;background:#000}
@@ -79,7 +76,7 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 </div>
 </div>
 <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-<img src="pic5.jpg" class="main-pic" onerror="this.style.display='none'" id="mainPic">
+<div class="cute-badge">✨ Cutest Girl In The World ✨</div>
 <div class="logo" id="mainLogo">💜✨</div>
 <h1 id="mainTitle">Zainab, Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span></h1>
 <p class="sub" id="mainSub">Sach batana Zainab, jhoot nahi chalega <b>meri jaan!</b></p>
@@ -96,16 +93,9 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 <div class="reason"><b>💫 Dua</b>Har dua me Zainab hai</div>
 </div>
 <div class="timeline">
-<div class="timeline-item"><span>👀</span><div><b>PEHLI MULAQAT</b><p>Jab pehli baar dekha, dil ruk gaya tha</p></div></div>
-<div class="timeline-item"><span>💬</span><div><b>PEHLI BAAT</b><p>Us din se har din khubsurat lagne laga</p></div></div>
 <div class="timeline-item"><span>💜</span><div><b>AAJ KA DIN</b><p>Aaj Zain, Zainab se sab kuch kehna chahta hai</p></div></div>
 </div>
-<div class="gallery">
-<img src="pic5.jpg" onclick="openBig(this.src)">
-<img src="pic6.jpg" onclick="openBig(this.src)">
-<img src="pic7.jpg" onclick="openBig(this.src)">
-</div>
-<div class="dev">MADE WITH 💜 BY <b>ZAIN FOR ZAINAB</b></div>
+<div class="dev">MADE WITH 💜 BY <b>SAMAMA</b> FOR ZAIN & ZAINAB</div>
 </div>
 <div id="aboutModal" class="modal" onclick="closeAbout()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeAbout()">✕</div><h3 style="color:#facc15">ABOUT THIS SURPRISE 💜</h3><p style="color:#fff;font-size:13px;line-height:1.8;margin-top:10px">Ye page sirf tumhare liye banaya hai Zainab.<br><br>Tum meri duniya ho, meri khushi ho, mera sab kuch ho.<br><br><b style="color:#d8b4fe">Hamesha Tumhara,<br>Zain 💜</b></p></div></div>
 <div id="letterModal" class="modal" onclick="closeLetter()"><div class="modal-box" onclick="event.stopPropagation()"><div class="close" onclick="closeLetter()">✕</div><div style="font-size:48px;text-align:center">💌</div><h3 style="color:#facc15;text-align:center">ZAIN KA LOVE LETTER</h3><p id="typeText" style="color:#fff;font-size:13px;line-height:1.9;margin-top:10px;min-height:180px"></p></div></div>
@@ -146,7 +136,7 @@ noBtn.addEventListener('mouseenter',moveNo);
 noBtn.addEventListener('touchstart',e=>{e.preventDefault();moveNo();});
 noBtn.addEventListener('click',e=>{e.preventDefault();moveNo();});
 document.addEventListener('mousemove',e=>{if(!roaming)return;let r=noBtn.getBoundingClientRect();let d=Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2));if(d<110)moveNo();});
-setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['💜','💛','✨','💋','🌟'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*18)+'px';h.style.animationDuration=(2.5+Math.random()*2)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),4500);},500);
+setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['💜','💛','✨','💋','🌟','🥰','😍'][Math.floor(Math.random()*7)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*18)+'px';h.style.animationDuration=(2.5+Math.random()*2)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),4500);},500);
 const qs=[
  {logo:"💜✨",title:"Zainab, Kya Tumhe Meri Yaad <span>Aati Hai? 🥺</span>",sub:`Sach batana Zainab, jhoot nahi chalega <b>meri jaan!</b>`,badge:"QUESTION 1 OF 4",bar:"25%"},
  {logo:"😜💜",title:"Zainab, Kya Tum Mujhe <span>Roz Tang Karogi? 😜</span>",sub:`Lifetime contract hai Zainab, soch lo <b>meri jaan!</b>`,badge:"QUESTION 2 OF 4",bar:"50%"},
@@ -155,11 +145,21 @@ const qs=[
 ];
 let cur=0;const mainTitle=document.getElementById('mainTitle');const mainSub=document.getElementById('mainSub');const mainLogo=document.getElementById('mainLogo');
 function showQ(i){mainLogo.textContent=qs[i].logo;mainTitle.innerHTML=qs[i].title;mainSub.innerHTML=qs[i].sub;document.getElementById('topBadge').textContent=qs[i].badge;document.getElementById('progressBar').style.width=qs[i].bar;noCount=0;love=50;document.getElementById('meterFill').style.width='50%';document.getElementById('meterTxt').textContent='Love Meter: 50% 💜';yesBtn.style.transform='translate(-50%,-50%) scale(1)';yesBtn.textContent='YES! 😍';noBtn.style.transform='translate(-50%,-50%) scale(1)';}
-let showingVideo=true;
+let mediaIndex=0;
+const mediaList=[
+  {type:'video', src:'video8.mp4', cap:'Our beautiful moment 💜', btn:'🖼️ Photo 1'},
+  {type:'img', src:'pic5.jpg', cap:'Meri Pyaari Zainab 😍', btn:'🖼️ Photo 2'},
+  {type:'img', src:'pic6.jpg', cap:'Meri Queen Zainab 👑💜', btn:'🖼️ Photo 3'},
+  {type:'img', src:'pic7.jpg', cap:'Cutest Zainab 🥰✨', btn:'🎥 Video'}
+];
 function toggleMedia(){
+  mediaIndex=(mediaIndex+1)%mediaList.length;
+  let m=mediaList[mediaIndex];
   let con=document.getElementById('mediaBox');let cap=document.getElementById('cap');
-  if(showingVideo){con.innerHTML=`<img class="final-img" src="pic6.jpg">`;if(cap)cap.textContent='Meri Pyaari Zainab 😍';document.getElementById('nextBtn').textContent='🎥 Video';showingVideo=false;}
-  else{con.innerHTML=`<video class="final-video" src="video8.mp4" autoplay loop playsinline controls></video>`;if(cap)cap.textContent='Our beautiful moment 💜';document.getElementById('nextBtn').textContent='🖼️ Photo';showingVideo=true;}
+  if(m.type==='video'){con.innerHTML=`<video class="final-video" src="${m.src}" autoplay loop playsinline controls></video>`;}
+  else{con.innerHTML=`<img class="final-img" src="${m.src}">`;}
+  if(cap)cap.textContent=m.cap;
+  document.getElementById('nextBtn').textContent=m.btn;
 }
 yesBtn.onclick=()=>{
   if(cur<3){cur++;showQ(cur);roaming=false;noBtn.classList.remove('roaming');noBtn.style.left='';noBtn.style.top='';noBtn.style.left='68%';noBtn.style.top='50%';}
@@ -174,12 +174,12 @@ yesBtn.onclick=()=>{
       <div class="final2">Zain Loves Zainab Forever & Always</div>
       <div class="shayari" style="margin-top:10px">“Zainab tu mili to dua kabool ho gayi,<br>Meri har khushi ab tumse shuru ho gayi.”<br><b>- Zain</b></div>
       <div style="display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap">
-        <button class="small-btn" id="nextBtn" onclick="toggleMedia()">🖼️ Photo</button>
+        <button class="small-btn" id="nextBtn" onclick="toggleMedia()">🖼️ Photo 1</button>
         <button class="small-btn gold" onclick="openLetter()">💌 Letter</button>
         <button class="small-btn" onclick="openPromise()">💍 Wada</button>
         <button class="small-btn" onclick="startFW()">🎆 Again</button>
       </div>
-      <div class="dev">MADE WITH 💜 BY <b>ZAIN FOR ZAINAB</b></div>
+      <div class="dev">MADE WITH 💜 BY <b>SAMAMA</b> FOR ZAIN & ZAINAB</div>
     `;
   }
 };
