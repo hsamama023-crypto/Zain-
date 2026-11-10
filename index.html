@@ -47,6 +47,14 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 .ring{font-size:60px;animation:spin 3s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 .dev{margin-top:14px;font-size:8px;letter-spacing:3px;color:rgba(255,255,255,.35)}.dev b{color:#facc15}
+</style>
+</head>
+<body>
+<canvas id="starsCanvas"></canvas>
+<canvas id="fwCanvas"></canvas>
+<div id="bigText" class="big-text">ZAINAB SAID<br>YES! 💜✨</div>
+<audio id="bgSong" loop src="song9.mp3"></audio>
+<style>
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:99;padding:18px}
 .modal.show{display:flex}
 .modal-box{width:100%;max-width:340px;background:#12002b;border:1.5px solid #a855f7;border-radius:22px;padding:20px;position:relative;max-height:85vh;overflow-y:auto}
@@ -69,14 +77,6 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 .shake{animation:shake .4s}
 </style>
-</head>
-<body>
-<canvas id="starsCanvas"></canvas>
-<canvas id="fwCanvas"></canvas>
-<div id="bigText" class="big-text">ZAINAB SAID<br>YES! 💜✨</div>
-<audio id="bgSong" loop src="song9.mp3"></audio>
-
-<!-- LOCK SCREEN -->
 <div id="lockScreen">
 <div class="lock-box">
 <div style="font-size:64px;animation:beat 1.2s infinite">🔒💜</div>
@@ -89,7 +89,6 @@ h1 span{background:linear-gradient(90deg,#a855f7,#facc15);-webkit-background-cli
 <p style="color:rgba(255,255,255,.3);font-size:9px;letter-spacing:2px;margin-top:14px">MADE WITH 💜 BY <b style="color:#facc15">SAMAMA</b></p>
 </div>
 </div>
-
 <div class="card" id="card" style="display:none">
 <div class="top-row">
 <div class="badge" id="topBadge">QUESTION 1 OF 4</div>
@@ -151,8 +150,8 @@ function checkPass(){
   }
 }
 function sendWhatsApp(){
-  let msg=encodeURIComponent("Zain 💜 Maine YES bol diya! 🥹✨ Main hamesha ke liye tumhari hun! I Love You So Much! - Zainab 💜");
-  window.open("https://wa.me/?text="+msg,"_blank");
+  let msg=encodeURIComponent("Zain meri jaan 😚💜\n\nYES YES YES!!! 🥹✨\n\nYes, I Love You So Much Zain! 😘💋\nTum meri duniya ho, meri khushi ho, mera sab kuch ho!\n\nMaine YES bol diya meri jaan! Ab main hamesha ke liye sirf tumhari hun 💍💜\nTum mujhe kabhi chhod ke mat jana, please 🥺\n\nI Love You Forever & Always Meri Jaan 😚💜💋\n\n- Tumhari Zainab 👑💜");
+  window.open("https://wa.me/923461053874?text="+msg,"_blank");
 }
 function openAbout(){document.getElementById('aboutModal').classList.add('show')}function closeAbout(){document.getElementById('aboutModal').classList.remove('show')}
 function openPromise(){document.getElementById('promiseModal').classList.add('show')}function closePromise(){document.getElementById('promiseModal').classList.remove('show')}
@@ -221,7 +220,7 @@ yesBtn.onclick=()=>{
         <button class="small-btn" onclick="openPromise()">💍 Wada</button>
         <button class="small-btn" onclick="startFW()">🎆 Again</button>
       </div>
-      <button class="small-btn green" onclick="sendWhatsApp()" style="width:100%;margin-top:10px;padding:13px;font-size:14px">💚 Zain ko WhatsApp pe YES bhejo</button>
+      <button class="small-btn green" onclick="sendWhatsApp()" style="width:100%;margin-top:10px;padding:13px;font-size:14px">💚 Zain ko WhatsApp pe YES bhejo 😚</button>
       <div class="dev">MADE WITH 💜 BY <b>SAMAMA</b> FOR ZAIN & ZAINAB</div>
     `;
   }
